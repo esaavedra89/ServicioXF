@@ -19,18 +19,20 @@ namespace ServicioXF
         protected override void OnStart()
         {
             // Handle when your app starts
-            //Register Periodic Tasks
-            BackgroundAggregatorService.Add(() => new PeriodicWebCall(3));
-            //BackgroundAggregatorService.Add(() => new PeriodicCall2(4));
-
-            //Start the background service
-            BackgroundAggregatorService.StartBackgroundService();
+            
         }
 
         protected override void OnSleep()
         {
             // Handle when your app sleeps
             //BackgroundAggregatorService.StopBackgroundService();
+
+            //Register Periodic Tasks
+            BackgroundAggregatorService.Add(() => new PeriodicWebCall(3));
+            //BackgroundAggregatorService.Add(() => new PeriodicCall2(4));
+
+            //Start the background service
+            BackgroundAggregatorService.StartBackgroundService();
         }
 
         protected override void OnResume()

@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -39,8 +38,6 @@ namespace ServicioXF.Services
                 count = Convert.ToInt32(Application.Current.Properties["Contador"]);
             }
 
-            //DependencyService.Get<IMessage>().ShortAlert(count.ToString());
-
             // YOUR CODE HERE
             // THIS CODE WILL BE EXECUTE EVERY INTERVAL
             //return true; //return false when you want to stop or trigger only once
@@ -50,12 +47,6 @@ namespace ServicioXF.Services
                 "http://neoapi.neotecnologias.com/floranueva/api/SeleccionTablaEspecifica?NombreTabla=AbejasNativasVisitaGrupal");
             if (!response.IsSuccessStatusCode)
             {
-                await Application.Current.MainPage.DisplayAlert(
-                "Error",
-                response.RequestMessage.ToString(),
-                "Aceptar");
-
-
                 return false;
             }
 
